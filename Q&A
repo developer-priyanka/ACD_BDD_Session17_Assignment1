@@ -1,0 +1,31 @@
+Give a brief elaboration of the below questions.
+
+1. Give a brief difference between HBASE and HDFS.
+Ans. HDFS:HDFS is a filesystem to store a large volume of data in a distributed envioronment.It can only perform batch processing.It provides high latency batch processing.It provides only sequential access of data.It doesn't support fast individual record lookups.
+HBASE:HBASE is column oriented database that sits on the top of the hadoop file system.It provides the low latancy access to  single row from billions of records.It supports the fast lookups for large table. 
+
+2. List the main components of HBASE.
+Ans. HBase has three major components: the client library, a master server, and region servers
+
+3. Does Hbase support sql?
+Ans.No.
+
+4. When should we use HBASE, list some of the scenarios for the same.
+
+Ans. *HBase is useful whenever there is a need to write heavy applications.
+     *HBase is useful whenever we need to provide fast random access to available data.
+
+5. What are the different modes in which Hbase can be run?
+Ans. 1.PseudoMode 2.Standalone mode
+
+6. Why is zookeeper needed in Hbase?
+Ans. ZooKeeper is an open source project that provides services like maintaining configuration information,naming and prividing distributed synchronization.Zookeeper has ephemeral nodes representing different region servers.Master servers use these nodes to discover available region servers.these nodes are also used to track server failures or network partitions.Clients communicate with region servers via zookeeper.
+
+ 8 Hbase is a schema less database, what does it mean?
+Ans. HBase is schema-less, it doesn't have the concept of fixed columns schema.It defines only column families.
+
+ 9 What is the minimum number of column family every Hbase table should have?
+Ans. 1
+
+ 10 What is the benefit of using connection pool in Hbase?
+Ans. Using connection pool in HBase we can reuse the HBase Connection object in a multi-threaded application because creating connection to a server component from an application is a heavy weight operation. if there are region movements for balancing or if a region server fails, the meta data need to be refreshed for each connection object which is a performance overhead. For these reasons, applications need to try to reuse connection objects created.
